@@ -136,7 +136,7 @@ Example:
  
 *$graph->bar( $array_values, $arr_values_y_param = null, $cfg = null );*
 
-This method prepare a serie of values in BAR format. Do not echo the graph
+This method prepare a serie of values in BAR format. Do not echo the graph. To see how to echo graph, see *output_gd_png_base64()* method.
 
 $array_values: Values of Axis X
 
@@ -169,7 +169,7 @@ Whith this simple code you will generate the most simplest graph:
  
 *$graph->plot( $array_values, $arr_values_y_param = null, $cfg = null );*
 
-This method prepare a serie of values in LINES format. Do not echo the graph
+This method prepare a serie of values in LINES format. Do not echo the graph. To see how to echo graph, see *output_gd_png_base64()* method.
 
 $array_values: Values of Axis X
 
