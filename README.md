@@ -17,13 +17,14 @@ Graph Bars & lines
 
 ![Screenshot graph lines created in Pure PHP](https://github.com/vivesweb/graph/blob/main/sample4.png?raw=true)
 
-Nice line graph
+Nice Math line graph
+
+And now some group of samples:
 
 ![Screenshot graphs created in Pure PHP](https://github.com/vivesweb/graph-php/blob/main/multigraph1.jpg?raw=true)
 ![Screenshot graphs created in Pure PHP](https://github.com/vivesweb/graph-php/blob/main/multigraph2.jpg?raw=true)
 ![Screenshot graphs created in Pure PHP](https://github.com/vivesweb/graph-php/blob/main/multigraph3.jpg?raw=true)
 
-More screenshots
 
 
  # REQUERIMENTS:
