@@ -174,7 +174,7 @@ Example:
 
       $graph = new graph();
       $graph->plot( [1, 1.5, 2, 1.8, 3] );
-      $graph->title("Simple Plot graph with line");
+      $graph->title("Simple Plot graph with line"); // Set the title of the bar. See title() method
       echo '<img src="'.$graph->output_gd_png_base64( ).'" >'; // Echo img raw data in html page
       
 Whith this simple code you will generate the most simplest line graph:
@@ -190,7 +190,7 @@ Example:
       $graph = new graph();
       $graph->plot( [1, 1.5, 2, 1.8, 3] );
       $graph->plot( [2, 2.8, 1.7, 2, 2.3] );
-      $graph->title("Multi Line");
+      $graph->title("Multi Line"); // Set the title of the bar. See title() method
       echo '<img src="'.$graph->output_gd_png_base64( ).'" >'; // Echo img raw data in html page
       
 Whith this simple code you will generate Multiline Graph:
@@ -206,7 +206,7 @@ Example:
       $graph = new graph();
       $graph->bar( [1, 2, 3, 4, 5, 6, 7], [1, 4, 9, 16, 17, 18, 17] );
       $graph->plot( [1, 2, 3, 4, 5, 6, 7], [10,8, 5, 10,15, 16, 15] );
-      $graph->title( 'Bar & Line' );
+      $graph->title( 'Bar & Line' ); // Set the title of the bar. See title() method
       echo '<img src="'.$graph->output_gd_png_base64( ).'" >'; // Echo img raw data in html page
       
 Whith this simple code you will generate Line & Bar Graph:
