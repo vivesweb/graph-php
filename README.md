@@ -141,14 +141,16 @@ Example:
 
       $graph = new graph();
       $graph->bar( [1, 2, 3, 4] );
+      echo '<img src="'.$graph->output_gd_png_base64( ).'" >'; // Echo img raw data in html page
       
-Whith this simple code, the method '$graph->output_gd_png_base64( );' whill generate the most simplest graph:
+Whith this simple code you will generate the most simplest graph:
 
 ![Simple graph bar](https://github.com/vivesweb/graph-php/blob/main/samplesimple.png?raw=true)
  
  - **SET GRAPH TITLE:**
  
 *$graph->title( $title );*
+*$graph->set_title( $title ); // synonymous of title()*
 
 This method set the graph title
 
@@ -159,13 +161,13 @@ Example:
       $graph = new graph();
       $graph->bar( [1, 2, 3, 4] );
       $graph->title("Here your graph TITLE");
+      echo '<img src="'.$graph->output_gd_png_base64( ).'" >'; // Echo img raw data in html page
       
-Whith this simple code, the method '$graph->output_gd_png_base64( );' whill generate next graph:
+Whith this simple code you will generate Simple Bar graph with title:
 
 ![Simple graph bar with title](https://github.com/vivesweb/graph-php/blob/main/sampletitle.png?raw=true)
 
 
-https://github.com/vivesweb/graph-php/blob/main/sampletitle.png?raw=true
  
  **Of course. You can use it freely :vulcan_salute::alien:**
  
