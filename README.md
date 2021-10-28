@@ -344,6 +344,50 @@ Example with legend names:
 Whith this simple code you will generate Graph with legend:
 
 ![Simple graph with legend names](https://github.com/vivesweb/graph-php/blob/main/samplelegendnames.png?raw=true)
+ 
+ - **MARKERS:**
+ 
+When plot a line or bar, you can send a param marker. Markers allowed:
+'x', 'o', 'd', '^', 's'
+
+Example:
+
+	$graph->plot( [4, 5, 6, 7], [1, 4, 9, 16], ['marker' => 'x'] );
+	$graph->plot( [4, 5, 6, 7], [5, 8, 7, 10], ['marker' => 'o'] );
+	$graph->axes([2, 9, 0, 20]);
+	$graph->title( 'Lines & Legend with "x" & "o" markers' );
+	$graph->legend( );
+      
+Whith this simple code you will generate Graph with markers:
+
+![Simple graph with markers](https://github.com/vivesweb/graph-php/blob/main/samplemarker.png?raw=true)
+
+You can pass directly the marker and format line. Example of use with line with marker and only marker:
+
+	$graph->plot( [4, 5, 6, 7], [1, 4, 9, 16], 'o' );
+	$graph->plot( [4, 5, 6, 7], [5, 8, 7, 10], 'x-' );
+	$graph->axes([2, 9, 0, 20]);
+	$graph->title( 'Line with marker & only markers' );
+      
+Whith this simple code you will generate Graph with markers and serie with marker and line:
+
+![Simple graph with markers and markers with lines](https://github.com/vivesweb/graph-php/blob/main/samplemarkerplot.png?raw=true)
+ 
+ - **CUSTOM PNG MARKERS:**
+ 
+You can use your custom PNG markers. The file need to be .png file (PNG-8. Don't work with PNG-24)
+
+Example:
+
+	$graph->plot( [4, 5, 6, 7], [1, 4, 9, 16], ['marker' => 'x'] );
+	$graph->plot( [4, 5, 6, 7], [5, 8, 7, 10], ['marker' => 'o'] );
+	$graph->axes([2, 9, 0, 20]);
+	$graph->title( 'Lines & Legend with "x" & "o" markers' );
+	$graph->legend( );
+      
+Whith this simple code you will generate Graph with markers:
+
+![Simple graph with markers](https://github.com/vivesweb/graph-php/blob/main/samplemarker.png?raw=true)
 
 
  
