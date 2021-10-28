@@ -533,8 +533,8 @@ You can create a Scatter Graph.
 
 $arr_values will be as:
 $arr_vaues = [
-	[ [1, 1.5, 2, 2, 3, 4], [10, 9.5, 9, 10, 8, 9] ], // For Serie 1
-    	[ [4, 5, 5.7, 6, 7, 8], [8, 6, 7.3, 8, 7, 8] ], // For Serie 2
+	[ [1, 1.5, 2, 2, 3, 4], [10, 9.5, 9, 10, 8, 9] ], // For Serie 1 [ [x_arrayvalues], [y_arrayvaues] ]
+    	[ [4, 5, 5.7, 6, 7, 8], [8, 6, 7.3, 8, 7, 8] ], // For Serie 2 [ [x_arrayvalues], [y_arrayvaues] ]
 ]
 
 If you want labels on Legend, use this:
