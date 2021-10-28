@@ -160,7 +160,7 @@ Example:
       $graph->bar( [1, 2, 3, 4] );
       echo '<img src="'.$graph->output_gd_png_base64( ).'" >'; // Echo img raw data in html page
       
-Whith this simple code you will generate the most simplest graph:
+With this simple code you will generate the most simplest graph:
 
 ![Simple graph bar](https://github.com/vivesweb/graph-php/blob/main/samplesimple.png?raw=true)
 
@@ -171,7 +171,7 @@ Example with x & y values:
       $graph->title("With X & Y Values"); // Set the title of the bar. See title() method
       echo '<img src="'.$graph->output_gd_png_base64( ).'" >'; // Echo img raw data in html page
       
-Whith this simple code you will generate the most simplest graph:
+With this simple code you will generate the most simplest graph:
 
 ![Simple graph bar with X & Y values](https://github.com/vivesweb/graph-php/blob/main/samplexyvalues.png?raw=true)
 
@@ -194,7 +194,7 @@ Example:
       $graph->title("Simple Plot graph with line"); // Set the title of the bar. See title() method
       echo '<img src="'.$graph->output_gd_png_base64( ).'" >'; // Echo img raw data in html page
       
-Whith this simple code you will generate the most simplest line graph:
+With this simple code you will generate the most simplest line graph:
 
 ![Simple plot line graph](https://github.com/vivesweb/graph-php/blob/main/sampleplotline.png?raw=true)
 
@@ -210,7 +210,7 @@ Example:
       $graph->title("Multi Line"); // Set the title of the bar. See title() method
       echo '<img src="'.$graph->output_gd_png_base64( ).'" >'; // Echo img raw data in html page
       
-Whith this simple code you will generate Multiline Graph:
+With this simple code you will generate Multiline Graph:
 
 ![Plot Multiline graph](https://github.com/vivesweb/graph-php/blob/main/samplemultiline.png?raw=true)
 
@@ -226,7 +226,7 @@ Example:
       $graph->title( 'Bar & Line' ); // Set the title of the bar. See title() method
       echo '<img src="'.$graph->output_gd_png_base64( ).'" >'; // Echo img raw data in html page
       
-Whith this simple code you will generate Line & Bar Graph:
+With this simple code you will generate Line & Bar Graph:
 
 ![Plot Line & Bar graph](https://github.com/vivesweb/graph-php/blob/main/samplebarline.png?raw=true)
 
@@ -249,7 +249,7 @@ Example:
       $graph->title("Here your graph TITLE");
       echo '<img src="'.$graph->output_gd_png_base64( ).'" >'; // Echo img raw data in html page
       
-Whith this simple code you will generate Simple Bar graph with title:
+With this simple code you will generate Simple Bar graph with title:
 
 ![Simple graph bar with title](https://github.com/vivesweb/graph-php/blob/main/sampletitle.png?raw=true)
  
@@ -270,7 +270,7 @@ Example:
       $graph->xlabel( 'Here your graph X LABEL' );
       echo '<img src="'.$graph->output_gd_png_base64( ).'" >'; // Echo img raw data in html page
       
-Whith this simple code you will generate Simple Bar graph with X label:
+With this simple code you will generate Simple Bar graph with X label:
 
 ![Simple graph bar with X LABEL](https://github.com/vivesweb/graph-php/blob/main/samplexlabel.png?raw=true)
  
@@ -291,7 +291,7 @@ Example:
       $graph->ylabel( 'Here your graph Y LABEL' );
       echo '<img src="'.$graph->output_gd_png_base64( ).'" >'; // Echo img raw data in html page
       
-Whith this simple code you will generate Simple Bar graph with Y label:
+With this simple code you will generate Simple Bar graph with Y label:
 
 ![Simple graph bar with Y LABEL](https://github.com/vivesweb/graph-php/blob/main/sampleylabel.png?raw=true)
  
@@ -328,7 +328,7 @@ Example:
       $graph->title("Limits Axis X & Y"); // Set the Title
       echo '<img src="'.$graph->output_gd_png_base64( ).'" >'; // Echo img raw data in html page
       
-Whith this simple code you will generate Simple Bar graph with limits in X & Y axis:
+With this simple code you will generate Simple Bar graph with limits in X & Y axis:
 
 ![Simple graph bar with Limits Max & Min in Axes X & Y](https://github.com/vivesweb/graph-php/blob/main/samplelimitsxy.png?raw=true)
  
@@ -348,7 +348,7 @@ Example:
 	$graph->legend( );
 	echo '<img src="'.$graph->output_gd_png_base64( ).'" >'; // Echo img raw data in html page
       
-Whith this simple code you will generate Graph with legend:
+With this simple code you will generate Graph with legend:
 
 ![Simple graph with legend](https://github.com/vivesweb/graph-php/blob/main/samplelegend.png?raw=true)
 
@@ -360,7 +360,7 @@ Example with legend names:
 	$graph->legend( );
 	echo '<img src="'.$graph->output_gd_png_base64( ).'" >'; // Echo img raw data in html page
       
-Whith this simple code you will generate Graph with legend:
+With this simple code you will generate Graph with legend:
 
 ![Simple graph with legend names](https://github.com/vivesweb/graph-php/blob/main/samplelegendnames.png?raw=true)
  
@@ -380,7 +380,7 @@ Example:
 	$graph->legend( );
 	echo '<img src="'.$graph->output_gd_png_base64( ).'" >'; // Echo img raw data in html page
       
-Whith this simple code you will generate Graph with markers:
+With this simple code you will generate Graph with markers:
 
 ![Simple graph with markers](https://github.com/vivesweb/graph-php/blob/main/samplemarker.png?raw=true)
 
@@ -392,7 +392,7 @@ You can pass directly the marker and format line. Example of use with line with 
 	$graph->title( 'Line with marker & only markers' );
 	echo '<img src="'.$graph->output_gd_png_base64( ).'" >'; // Echo img raw data in html page
       
-Whith this simple code you will generate Graph with markers and serie with marker and line:
+With this simple code you will generate Graph with markers and serie with marker and line:
 
 ![Simple graph with markers and markers with lines](https://github.com/vivesweb/graph-php/blob/main/samplemarkerplot.png?raw=true)
 
@@ -406,7 +406,7 @@ In 1 simple row you can pass more than 1 array of values with colors & markers. 
 	$graph->title( 'Colors, disctont. line & markers "--", "square", "^"' );
 	echo '<img src="'.$graph->output_gd_png_base64( ).'" >'; // Echo img raw data in html page
       
-Whith this simple code you will generate Graph with mutiple values, colors & markers:
+With this simple code you will generate Graph with mutiple values, colors & markers:
 
 ![Simple graph with multi array of values, colors & markers](https://github.com/vivesweb/graph-php/blob/main/samplemarkers.png?raw=true)
  
@@ -420,7 +420,7 @@ Example:
 	$graph->title( 'Custom image ^_^\'' );
 	echo '<img src="'.$graph->output_gd_png_base64( ).'" >'; // Echo img raw data in html page
       
-Whith this simple code you will generate Graph with custom markers:
+With this simple code you will generate Graph with custom markers:
 
 ![Simple graph with custom markers](https://github.com/vivesweb/graph-php/blob/main/samplecustompng.png?raw=true)
  
@@ -442,7 +442,7 @@ Example:
 	$graph->legend( );
 	echo '<img src="'.$graph->output_gd_png_base64( ).'" >'; // Echo img raw data in html page
       
-Whith this simple code you will generate Graph with custom markers & Guidelines:
+With this simple code you will generate Graph with custom markers & Guidelines:
 
 ![Simple graph with Guidelines](https://github.com/vivesweb/graph-php/blob/main/sampleguidelines.png?raw=true)
  
@@ -497,7 +497,7 @@ Example:
 	$graph->plot( [ [$x, $x, 'r--'], [$x, $graph->math->pow($x, 2), 'bs'], [$x, $graph->math->pow($x, 3), 'g^'] ] );
 	echo '<img src="'.$graph->output_gd_png_base64( ).'" >'; // Echo img raw data in html page
       
-Whith this simple code you will generate Graph with background image:
+With this simple code you will generate Graph with background image:
 
 ![Simple graph with Background image](https://github.com/vivesweb/graph-php/blob/main/samplebackground.png?raw=true)
 
@@ -524,7 +524,7 @@ Example with cleared background image:
 	$graph->legend();
 	echo '<img src="'.$graph->output_gd_png_base64( ).'" >'; // Echo img raw data in html page
       
-Whith this simple code you will generate Graph with cleared background image:
+With this simple code you will generate Graph with cleared background image:
 
 ![Simple graph with Cleared Background image](https://github.com/vivesweb/graph-php/blob/main/samplegraybackground.png?raw=true)
  
@@ -542,7 +542,7 @@ Example:
 	$graph->xticks( ['rotation' => 45]);
 	echo '<img src="'.$graph->output_gd_png_base64( ).'" >'; // Echo img raw data in html page
       
-Whith this simple code you will generate Graph with rotation X labels:
+With this simple code you will generate Graph with rotation X labels:
 
 ![Simple graph with rotation 45º X labes](https://github.com/vivesweb/graph-php/blob/main/samplerotationticks.png?raw=true)
  
@@ -578,7 +578,7 @@ Example:
 	$graph->legend( );
 	echo '<img src="'.$graph->output_gd_png_base64( ).'" >'; // Echo img raw data in html page
       
-Whith this simple code you will generate Scatter Graph:
+With this simple code you will generate Scatter Graph:
 
 ![Simple graph with Scatter](https://github.com/vivesweb/graph-php/blob/main/samplescatter.png?raw=true)
  
@@ -596,7 +596,7 @@ Example:
 	$graph->hist( [10, 11, 40, 45, 50, 55, 60, 60, 70, 80, 85, 90, 95, 100, 105, 106, 107, 108, 109, 110, 111, 112, 123, 140, 150] );
 	echo '<img src="'.$graph->output_gd_png_base64( ).'" >'; // Echo img raw data in html page
       
-Whith this simple code you will generate Histogram Graph:
+With this simple code you will generate Histogram Graph:
 
 ![Simple graph with histogram](https://github.com/vivesweb/graph-php/blob/main/samplehistogram.png?raw=true)
 
@@ -606,7 +606,7 @@ Example of Histogram with 7 blocks:
 	$graph->hist( [10, 11, 40, 45, 50, 55, 60, 60, 70, 80, 85, 90, 95, 100, 105, 106, 107, 108, 109, 110, 111, 112, 123, 140, 150], ['num_blocks' => 7] );
 	echo '<img src="'.$graph->output_gd_png_base64( ).'" >'; // Echo img raw data in html page
       
-Whith this simple code you will generate Histogram Graph with 7 bocks:
+With this simple code you will generate Histogram Graph with 7 bocks:
 
 ![Simple graph with histogram](https://github.com/vivesweb/graph-php/blob/main/samplehistseven.png?raw=true)
 
@@ -708,7 +708,7 @@ Example:
 	$graph->legend( );
 	echo '<img src="'.$graph->output_gd_png_base64( ).'" >'; // Echo img raw data in html page
       
-Whith this simple code you will generate Simple Bar graph with Math Functions:
+With this simple code you will generate Simple Bar graph with Math Functions:
 
 ![Simple graph bar with Limits Max & Min in Axes X & Y. Math Functions](https://github.com/vivesweb/graph-php/blob/main/sample4.png?raw=true)
 
