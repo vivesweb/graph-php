@@ -47,6 +47,16 @@ And now some group of samples:
 
     - Red Hat Enterprise Linux release 8.4 (Ootpa). PHP Version 8.0.11 (Production Server) 512Mb Memory Limit
 
+ # SERVER REQUERIMENTS:
+ 
+    - PHP with GD enabled: sudo apt install php-gd
+    
+    - img2img class: If you need to use IMG_FILTER_SCATTER you need at least PHP >= PHP7.4.0. See official doc: https://www.php.net/manual/en/function.imagefilter.php
+    
+    - PHP with Imagick for some functions. It is not required for by most methods, but in some, like reading pdf or psd, you will need it. Install: sudo apt install php-imagick
+      
+    - Requires for Instagram background effects: https://github.com/zaachi/PHP-Instagram-effects
+
 
  
 # FILES:
