@@ -393,20 +393,59 @@ Whith this simple code you will generate Graph with mutiple values, colors & mar
  
  - **CUSTOM PNG MARKERS:**
  
-You can use your custom PNG markers. The file need to be .png file (PNG-8. Don't work with PNG-24)
+You can use your custom PNG markers. The file need to be .png file (NOTE: ONLY WORKS WITH PNG-8. Don't work with PNG-24)
 
 Example:
 
-	$graph->plot( [4, 5, 6, 7], [1, 4, 9, 16], ['marker' => 'x'] );
-	$graph->plot( [4, 5, 6, 7], [5, 8, 7, 10], ['marker' => 'o'] );
-	$graph->axes([2, 9, 0, 20]);
-	$graph->title( 'Lines & Legend with "x" & "o" markers' );
+	$graph->plot( [4, 5, 6, 7], [1, 4, 9, 16], ['marker' => __DIR__ . '/author.png',] );
+	$graph->title( 'Custom image ^_^\'' );
+	echo '<img src="'.$graph->output_gd_png_base64( ).'" >'; // Echo img raw data in html page
+      
+Whith this simple code you will generate Graph with custom markers:
+
+![Simple graph with custom markers](https://github.com/vivesweb/graph-php/blob/main/samplecustompng.png?raw=true)
+ 
+ - **SHOW GUIDELINES:**
+ 
+You can use background guidelines
+
+*$graph->set_drawguidelines( $show=true );*
+
+Example:
+
+	$graph->plot( [4, 5, 6, 7], [1, 4, 9, 16], ['marker' => __DIR__ . '/custom_marker.png', 'label'=>'PHP'] );
+	$graph->plot( [4, 5, 6, 7], [3, 7, 13, 8], ['marker' => __DIR__ . '/tux.png', 'label'=>'GNU/Linux'] );
+	$graph->plot( [4, 5, 6, 7], [5, 2, 7, 5], ['marker' => __DIR__ . '/nginx.png', 'label'=>'NGINX'] );
+	$graph->set_drawguidelines( );
+	$graph->legendwidthlines( 65 ); // Change width of legend lines
+	$graph->legendlabelheight( 33 ); // Change height of legend labels
+	$graph->title( 'Better with Guidelines' );
 	$graph->legend( );
 	echo '<img src="'.$graph->output_gd_png_base64( ).'" >'; // Echo img raw data in html page
       
-Whith this simple code you will generate Graph with markers:
+Whith this simple code you will generate Graph with custom markers:
 
-![Simple graph with markers](https://github.com/vivesweb/graph-php/blob/main/samplemarker.png?raw=true)
+![Simple graph with Guidelines](https://github.com/vivesweb/graph-php/blob/main/sampleguidelines.png?raw=true)
+ 
+ - **SHOW X GUIDELINES:**
+ 
+You can show only background X guidelines
+
+*$graph->set_x_drawguidelines( $show=true );*
+
+Example:
+
+	$graph->set_x_drawguidelines( );
+ 
+ - **SHOW Y GUIDELINES:**
+ 
+You can show only background Y guidelines
+
+*$graph->set_y_drawguidelines( $show=true );*
+
+Example:
+
+	$graph->set_y_drawguidelines( );
 
 
  
