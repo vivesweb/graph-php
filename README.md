@@ -506,6 +506,24 @@ Example with cleared background image:
 Whith this simple code you will generate Graph with cleared background image:
 
 ![Simple graph with Cleared Background image](https://github.com/vivesweb/graph-php/blob/main/samplegraybackground.png?raw=true)
+ 
+ - **ROTATE TICKS X LABELS:**
+ 
+You can rotate text on X Axis labels. In this case we use 45º. if you want original hortzontal, set rotation to 0.
+
+*$graph->xticks( ['rotation' => 45] );*
+
+Example:
+
+	$graph->plot( [40000, 50000, 60000, 70000], [1, 4, 9, 13] );
+	$graph->title( 'Rotation Xticks' );
+	$graph->set_drawguidelines( );
+	$graph->xticks( ['rotation' => 45]);
+	echo '<img src="'.$graph->output_gd_png_base64( ).'" >'; // Echo img raw data in html page
+      
+Whith this simple code you will generate Graph with rotation X labels:
+
+![Simple graph with rotation 45º X labes](https://github.com/vivesweb/graph-php/blob/main/samplerotationticks.png?raw=true)
 
 
  
