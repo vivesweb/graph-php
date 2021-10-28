@@ -560,6 +560,24 @@ Example:
 Whith this simple code you will generate Scatter Graph:
 
 ![Simple graph with Scatter](https://github.com/vivesweb/graph-php/blob/main/samplescatter.png?raw=true)
+ 
+ - **HISTOGRAM:**
+ 
+You can create an histogram from data.
+
+*$graph->hist( $arr_values, $cfg = null );*
+
+$cfg['num_blocks] = blocks to divide histogram. Default = 10
+
+Example:
+
+	$graph->title( 'DEFAULT HISTOGRAM' );
+	$graph->hist( [10, 11, 40, 45, 50, 55, 60, 60, 70, 80, 85, 90, 95, 100, 105, 106, 107, 108, 109, 110, 111, 112, 123, 140, 150] );
+	echo '<img src="'.$graph->output_gd_png_base64( ).'" >'; // Echo img raw data in html page
+      
+Whith this simple code you will generate Histogram Graph:
+
+![Simple graph with histogram](https://github.com/vivesweb/graph-php/blob/main/samplehistogram.png?raw=true)
 
 
  
