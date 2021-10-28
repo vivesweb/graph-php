@@ -484,6 +484,8 @@ Whith this simple code you will generate Graph with background image:
 
 Is not a good idea use original image. You will need to transform it to more clearer picture. With the img2img class you can transform it directly. img2img (https://github.com/vivesweb/img2img). See the documentation for possibilites. You can see https://github.com/vivesweb/graph-php/blob/main/example.php to take some ideas for its use.
 
+The class of img2img is loaded at $graph->bckgr_img_gd. You can use directly the methods of img2img. See the next example.
+
 Example with cleared background image:
 
 	$graph->plot( [4, 5, 6, 7], [1, 4, 9, 13], ['marker' => __DIR__ . '/custom_marker.png', 'label'=>'PHP'] );
