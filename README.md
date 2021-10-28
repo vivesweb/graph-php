@@ -315,6 +315,38 @@ Whith this simple code you will generate Simple Bar graph with limits in X & Y a
 
 ![Simple graph bar with Limits Max & Min in Axes X & Y](https://github.com/vivesweb/graph-php/blob/main/samplelimitsxy.png?raw=true)
  
+ - **SHOW LEGEND:**
+ 
+*$graph->legend( $legend = true );*
+
+Calling this method the graph show the legend. You can set it to false to hide the legend. By default the legend is not showed.
+
+By default, the title of each serie to show in legend will be the index of the serie. You can set the name of the title with $cfg param whe call bar(), plot() methods
+
+Example:
+
+	$graph->bar( [1, 2, 3, 4, 5, 6, 7], [1, 4, 9, 16, 17, 18, 17] );
+	$graph->plot( [1, 2, 3, 4, 5, 6, 7], [10,8, 5, 10,15, 16, 15] );
+	$graph->title( 'Legend' );
+	$graph->legend( );
+      
+Whith this simple code you will generate Graph with legend:
+
+![Simple graph with legend](https://github.com/vivesweb/graph-php/blob/main/samplelegend.png?raw=true)
+
+Example with legend names:
+
+	$graph->bar( [1, 2, 3, 4, 5, 6, 7], [1, 4, 9, 16, 17, 18, 17], ['label'=>'Name Legend 1'] );
+	$graph->plot( [1, 2, 3, 4, 5, 6, 7], [10,8, 5, 10,15, 16, 15], ['label'=>'Name Legend 2'] );
+	$graph->title( 'Legend with label names' );
+	$graph->legend( );
+      
+Whith this simple code you will generate Graph with legend:
+
+![Simple graph with legend names](https://github.com/vivesweb/graph-php/blob/main/samplelegendnames.png?raw=true)
+
+
+ 
  - **MATH FUNCTIONS:**
  
 *$graph->math*
