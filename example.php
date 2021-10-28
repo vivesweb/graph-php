@@ -1,4 +1,18 @@
-<!doctype html>
+<?php
+ /** example.php // example file for graph-php.class.php
+  *  
+  * 
+  * @author Rafael Martin Soto
+  * @author {@link https://www.inatica.com/ Inatica}
+  * @blog {@link https://rafamartin10.blogspot.com/ Blog Rafael Martin Soto}
+  * @since October 2021
+  * @version 1.0.0
+  * @license GNU General Public License v3.0
+  *
+  * */
+
+require __DIR__ . '/graph-php.class.php';
+?><!doctype html>
 
 <html lang="en">
 <head>
@@ -17,11 +31,6 @@
 </head>
 <body>
 <?php
-require __DIR__ . '/graph-php.class.php';
-
-
-
-
 
 //$graph = new graph();
 //$max_min = [10, 15];
@@ -34,9 +43,41 @@ require __DIR__ . '/graph-php.class.php';
 
 
 $graph = new graph();
-$graph->ylabel( 'some numbers' );
 $graph->bar( [1, 2, 3, 4] );
-$graph->title("Only Y Values");
+?>
+
+  <img src="<?php echo $graph->output_gd_png_base64( );?>">
+  <?php
+  
+unset($graph);
+
+
+
+$graph = new graph();
+$graph->title("Here your graph TITLE");
+$graph->bar( [1, 2, 3, 4] );
+?>
+
+  <img src="<?php echo $graph->output_gd_png_base64( );?>">
+  <?php
+  
+unset($graph);
+
+
+$graph = new graph();
+$graph->ylabel( 'Here your graph Y LABEL' );
+$graph->bar( [1, 2, 3, 4] );
+?>
+
+  <img src="<?php echo $graph->output_gd_png_base64( );?>">
+  <?php
+  
+unset($graph);
+
+
+$graph = new graph();
+$graph->xlabel( 'Here your graph X LABEL' );
+$graph->bar( [1, 2, 3, 4] );
 ?>
 
   <img src="<?php echo $graph->output_gd_png_base64( );?>">
@@ -49,7 +90,7 @@ unset($graph);
 
 $graph = new graph();
 
-$graph->bar( [1, 2, 3, 4], [1, 4, 9, 16] );
+$graph->bar( [10, 20, 30, 40], [1, 4, 9, 16] );
 $graph->title("With X & Y Values");
 ?>
 
@@ -64,6 +105,29 @@ $graph = new graph();
 $graph->bar( [1, 2, 3, 4], [1, 4, 9, 16] );
 $graph->axes([0, 6, 0, 20]);
 $graph->title("Limits Axis X & Y");
+?>
+
+  <img src="<?php echo $graph->output_gd_png_base64( );?>">
+  <?php
+  
+unset($graph);
+
+
+$graph = new graph();
+$graph->plot( [1, 1.5, 2, 1.8, 3] );
+$graph->title("Simple Plot graph with line");
+?>
+
+  <img src="<?php echo $graph->output_gd_png_base64( );?>">
+  <?php
+  
+unset($graph);
+
+
+$graph = new graph();
+$graph->plot( [1, 1.5, 2, 1.8, 3] );
+$graph->plot( [2, 2.8, 1.7, 2, 2.3] );
+$graph->title("Multi Line");
 ?>
 
   <img src="<?php echo $graph->output_gd_png_base64( );?>">
@@ -112,6 +176,36 @@ $graph = new graph();
 $graph->bar( [1, 2, 3, 4, 5, 6, 7], [1, 4, 9, 16, 17, 18, 17] );
 $graph->plot( [1, 2, 3, 4, 5, 6, 7], [10,8, 5, 10,15, 16, 15] );
 $graph->title( 'Bar & Line' );
+?>
+
+  <img src="<?php echo $graph->output_gd_png_base64( );?>">
+  <?php
+  
+unset($graph);
+
+
+
+$graph = new graph();
+
+$graph->bar( [1, 2, 3, 4, 5, 6, 7], [1, 4, 9, 16, 17, 18, 17] );
+$graph->plot( [1, 2, 3, 4, 5, 6, 7], [10,8, 5, 10,15, 16, 15] );
+$graph->title( 'Legend' );
+$graph->legend( );
+?>
+
+  <img src="<?php echo $graph->output_gd_png_base64( );?>">
+  <?php
+  
+unset($graph);
+
+
+
+$graph = new graph();
+
+$graph->bar( [1, 2, 3, 4, 5, 6, 7], [1, 4, 9, 16, 17, 18, 17], ['label'=>'Name Legend 1'] );
+$graph->plot( [1, 2, 3, 4, 5, 6, 7], [10,8, 5, 10,15, 16, 15], ['label'=>'Name Legend 2'] );
+$graph->title( 'Legend with label names' );
+$graph->legend( );
 ?>
 
   <img src="<?php echo $graph->output_gd_png_base64( );?>">
