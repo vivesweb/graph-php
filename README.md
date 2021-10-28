@@ -19,6 +19,12 @@ Graph Bars & lines
 
 Nice line graph
 
+![Screenshot graphs created in Pure PHP](https://github.com/vivesweb/graph-php/blob/main/multigraph1.jpg?raw=true)
+![Screenshot graphs created in Pure PHP](https://github.com/vivesweb/graph-php/blob/main/multigraph2.jpg?raw=true)
+![Screenshot graphs created in Pure PHP](https://github.com/vivesweb/graph-php/blob/main/multigraph3.jpg?raw=true)
+
+More screenshots
+
 
  # REQUERIMENTS:
  
