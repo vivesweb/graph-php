@@ -501,6 +501,7 @@ Example with cleared background image:
 	$graph->bckgr_img_gd->filter( IMG_FILTER_BRIGHTNESS, 115 );
 	$graph->bckgr_img_gd->flip( );
 	$graph->legend();
+	echo '<img src="'.$graph->output_gd_png_base64( ).'" >'; // Echo img raw data in html page
       
 Whith this simple code you will generate Graph with cleared background image:
 
