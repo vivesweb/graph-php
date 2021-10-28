@@ -372,6 +372,19 @@ You can pass directly the marker and format line. Example of use with line with 
 Whith this simple code you will generate Graph with markers and serie with marker and line:
 
 ![Simple graph with markers and markers with lines](https://github.com/vivesweb/graph-php/blob/main/samplemarkerplot.png?raw=true)
+
+ - **PASS MORE THAN 1 PLOT VALUES, COLORS & MARKERS:**
+
+In 1 simple row you can pass more than 1 array of values with colors & markers. *See USING LINES, COLORS & MARKERS*:
+
+	$graph = new graph();
+	$x = $graph->math->linspace( 0, 5, 20 );
+	$graph->plot( [ [$x, $x, 'r--'], [$x, $graph->math->pow($x, 2), 'bs'], [$x, $graph->math->pow($x, 3), 'g^'] ] );
+	$graph->title( 'Colors, disctont. line & markers "--", "square", "^"' );
+      
+Whith this simple code you will generate Graph with mutiple values, colors & markers:
+
+![Simple graph with multi array of values, colors & markers](https://github.com/vivesweb/graph-php/blob/main/samplemarkers.png?raw=true)
  
  - **CUSTOM PNG MARKERS:**
  
