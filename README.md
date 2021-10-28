@@ -359,11 +359,7 @@ Whith this simple code you will generate Graph with legend:
 When plot a line or bar, you can send a param marker. Markers allowed:
 'x', 'o', 'd', '^', 's'
 
-'x': X marker
-'o': Circle marker
-'d': diamond marker
-'^': Triangle marker
-'s': Square marker
+*See USING LINES, COLORS & MARKERS.
 
 Example:
 
