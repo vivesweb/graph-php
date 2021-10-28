@@ -30,13 +30,13 @@ require __DIR__ . '/graph-php.class.php';
 
 
 
-$graph = new graph();
-$max_min = [10, 15];
-print "for ".$max_min[0]."/".$max_min[1]." diff ".($max_min[1]-$max_min[0]).": ";
+//$graph = new graph();
+//$max_min = [10, 15];
+//print "for ".$max_min[0]."/".$max_min[1]." diff ".($max_min[1]-$max_min[0]).": ";
 //echo $graph->compute_offset($max_min[0])."/".$graph->compute_offset($max_min[1]);
-var_dump($graph->compute_offset($max_min) );
+//var_dump($graph->compute_offset($max_min) );
   
-unset($graph);
+//unset($graph);
 
 
 
