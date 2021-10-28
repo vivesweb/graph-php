@@ -5,21 +5,14 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>A Basic HTML5 Template</title>
-  <meta name="description" content="A simple HTML5 Template for new projects.">
+  <title>Example Graph-PHP</title>
+  <meta name="description" content="Example Graph-PHP">
   <meta name="author" content="SitePoint">
 
-  <meta property="og:title" content="A Basic HTML5 Template">
+  <meta property="og:title" content="Example Graph-PHP">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://www.sitepoint.com/a-basic-html5-template/">
-  <meta property="og:description" content="A simple HTML5 Template for new projects.">
-  <meta property="og:image" content="image.png">
-
-  <link rel="icon" href="/favicon.ico">
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-
-  <link rel="stylesheet" href="css/styles.css?v=1.0">
+  <meta property="og:url" content="https://www.inatica.com">
+  <meta property="og:description" content="Example Graph-PHP">
 
 </head>
 <body>
