@@ -423,7 +423,7 @@ Example:
 	$graph->legend( );
 	echo '<img src="'.$graph->output_gd_png_base64( ).'" >'; // Echo img raw data in html page
       
-Whith this simple code you will generate Graph with custom markers:
+Whith this simple code you will generate Graph with custom markers & Guidelines:
 
 ![Simple graph with Guidelines](https://github.com/vivesweb/graph-php/blob/main/sampleguidelines.png?raw=true)
  
