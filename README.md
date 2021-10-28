@@ -146,6 +146,19 @@ Example:
 Whith this simple code you will generate the most simplest graph:
 
 ![Simple graph bar](https://github.com/vivesweb/graph-php/blob/main/samplesimple.png?raw=true)
+
+Example with x & y values:
+
+      $graph = new graph();
+      $graph->bar( [10, 20, 30, 40], [1, 4, 9, 16] );
+      $graph->title("With X & Y Values"); // Set the title of the bar. See title() method
+      echo '<img src="'.$graph->output_gd_png_base64( ).'" >'; // Echo img raw data in html page
+      
+Whith this simple code you will generate the most simplest graph:
+
+![Simple graph bar with X & Y values](https://github.com/vivesweb/graph-php/blob/main/samplexyvalues.png?raw=true)
+
+
  
  - **SET GRAPH TITLE:**
  
@@ -153,7 +166,7 @@ Whith this simple code you will generate the most simplest graph:
 
 *$graph->set_title( $title ); // synonymous of title()*
 
-This method set the graph title
+This method set the graph TITLE
 
 $title: String with the title
 
@@ -167,6 +180,30 @@ Example:
 Whith this simple code you will generate Simple Bar graph with title:
 
 ![Simple graph bar with title](https://github.com/vivesweb/graph-php/blob/main/sampletitle.png?raw=true)
+ 
+ - **SET GRAPH Y LABEL:**
+ 
+*$graph->ylabel( $ylabel );*
+
+*$graph->set_ylabel( $ylabel ); // synonymous of ylabel()*
+
+This method set the graph Y LABEL
+
+$ylabel: String with the Y LABEL
+
+Example:
+
+      $graph = new graph();
+      $graph->bar( [1, 2, 3, 4] );
+      $graph->ylabel( 'Here your graph Y LABEL' );
+      echo '<img src="'.$graph->output_gd_png_base64( ).'" >'; // Echo img raw data in html page
+      
+Whith this simple code you will generate Simple Bar graph with Y label:
+
+![Simple graph bar with Y LABEL](https://github.com/vivesweb/graph-php/blob/main/sampleylabel.png?raw=true)
+
+
+
 
 
  
