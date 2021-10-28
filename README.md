@@ -708,7 +708,7 @@ Example:
 	$graph->legend( );
 	echo '<img src="'.$graph->output_gd_png_base64( ).'" >'; // Echo img raw data in html page
       
-With this simple code you will generate Simple Bar graph with Math Functions:
+With this simple code you will generate Simple Line graph with Math Functions:
 
 ![Simple graph bar with Limits Max & Min in Axes X & Y. Math Functions](https://github.com/vivesweb/graph-php/blob/main/sample4.png?raw=true)
 
