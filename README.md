@@ -509,7 +509,7 @@ Whith this simple code you will generate Graph with cleared background image:
  
  - **ROTATE TICKS X LABELS:**
  
-You can rotate text on X Axis labels. In this case we use 45º. if you want original hortzontal, set rotation to 0.
+You can rotate text on X Axis labels. In this case we use 45º. if you want original horizontal, set rotation to 0.
 
 *$graph->xticks( ['rotation' => 45] );*
 
