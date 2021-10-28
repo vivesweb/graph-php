@@ -359,6 +359,12 @@ Whith this simple code you will generate Graph with legend:
 When plot a line or bar, you can send a param marker. Markers allowed:
 'x', 'o', 'd', '^', 's'
 
+'x': X marker
+'o': Circle marker
+'d': diamond marker
+'^': Triangle marker
+'s': Square marker
+
 Example:
 
 	$graph->plot( [4, 5, 6, 7], [1, 4, 9, 16], ['marker' => 'x'] );
@@ -639,7 +645,7 @@ You can set some types of graphs:
 
 '-': Single line
 
-'--': Double line
+'--': Discontinued line
 
 'bar': Bar
 
