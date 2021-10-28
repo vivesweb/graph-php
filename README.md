@@ -27,6 +27,8 @@ Nice line graph
   img2img (https://github.com/vivesweb/img2img)
   
   ext-op-ml-php (https://github.com/vivesweb/ext_op_ml)
+  
+ Requires DeJaVu Fonts: (https://travis-ci.org/dejavu-fonts/dejavu-fonts)
  
  - A minimum (minimum, minimum, minimum requeriments is needed). Tested on:
  		
