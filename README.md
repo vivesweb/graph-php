@@ -150,6 +150,7 @@ Whith this simple code you will generate the most simplest graph:
  - **SET GRAPH TITLE:**
  
 *$graph->title( $title );*
+
 *$graph->set_title( $title ); // synonymous of title()*
 
 This method set the graph title
