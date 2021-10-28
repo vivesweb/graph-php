@@ -1,5 +1,5 @@
 # Graph-PHP
-graph bars, histograms, graph lines, marks
+graph bars, histograms, graph lines, scratter, marks
 
 # V 1.0.0
 
@@ -10,6 +10,14 @@ You can create graphs with bars, graphs lines with marks, graphs with background
 ![Screenshot graph lines created in Pure PHP](https://github.com/vivesweb/graph/blob/main/sample%201.png?raw=true)
 
 Nice line graph display with markers
+
+![Screenshot graph bar & lines created in Pure PHP](https://github.com/vivesweb/graph/blob/main/sample2.png?raw=true)
+
+Graph Bars & lines
+
+![Screenshot graph lines created in Pure PHP](https://github.com/vivesweb/graph/blob/main/sample4.png?raw=true)
+
+Nice line graph
 
 
  # REQUERIMENTS:
