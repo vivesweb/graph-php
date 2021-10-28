@@ -446,6 +446,22 @@ You can show only background Y guidelines
 Example:
 
 	$graph->set_y_drawguidelines( );
+ 
+ - **CHANGE LINE WIDTH OF LEGEND:**
+ 
+Sometimes you will need to change the width of the series line at Legend. You can to set the with legendwidthlines()
+
+*$graph->legendwidthlines( $legendwidthlines=28 );*
+
+See example at SHOW GUIDELINES
+ 
+ - **CHANGE LABEL HEIGHT OF LEGEND:**
+ 
+Sometimes you will need to change the height of the labe series line at Legend. You can to set the with legendlabelheight()
+
+*$graph->legendlabelheight( $legendlabelheight=21 );*
+
+See example at SHOW GUIDELINES
 
 
  
