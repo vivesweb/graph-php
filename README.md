@@ -181,6 +181,27 @@ Whith this simple code you will generate Simple Bar graph with title:
 
 ![Simple graph bar with title](https://github.com/vivesweb/graph-php/blob/main/sampletitle.png?raw=true)
  
+ - **SET GRAPH X LABEL:**
+ 
+*$graph->xlabel( $xlabel );*
+
+*$graph->set_xlabel( $xlabel ); // synonymous of xlabel()*
+
+This method set the graph X LABEL
+
+$xlabel: String with the X LABEL
+
+Example:
+
+      $graph = new graph();
+      $graph->bar( [1, 2, 3, 4] );
+      $graph->xlabel( 'Here your graph X LABEL' );
+      echo '<img src="'.$graph->output_gd_png_base64( ).'" >'; // Echo img raw data in html page
+      
+Whith this simple code you will generate Simple Bar graph with X label:
+
+![Simple graph bar with X LABEL](https://github.com/vivesweb/graph-php/blob/main/samplexlabel.png?raw=true)
+ 
  - **SET GRAPH Y LABEL:**
  
 *$graph->ylabel( $ylabel );*
