@@ -462,6 +462,49 @@ Sometimes you will need to change the height of the labe series line at Legend. 
 *$graph->legendlabelheight( $legendlabelheight=21 );*
 
 See example at SHOW GUIDELINES
+ 
+ - **SET BACKGROUND IMAGE:**
+ 
+You can set a background image. Support .jpg, .png, .gif. The class that load the image is img2img (https://github.com/vivesweb/img2img). See the documentation for possibilites
+
+*$graph->imread( $filename );*
+
+Example:
+
+	$graph = new graph();
+	$graph->imread( __DIR__ .'/background_example.jpg');
+	$x = $graph->math->linspace( 0, 5, 20 );
+	$graph->title( 'Original Background' );
+	$graph->plot( [ [$x, $x, 'r--'], [$x, $graph->math->pow($x, 2), 'bs'], [$x, $graph->math->pow($x, 3), 'g^'] ] );
+	echo '<img src="'.$graph->output_gd_png_base64( ).'" >'; // Echo img raw data in html page
+      
+Whith this simple code you will generate Graph with background image:
+
+![Simple graph with Background image](https://github.com/vivesweb/graph-php/blob/main/samplebackground.png?raw=true)
+
+Is not a good idea use original image. You will need to transform it to mor clearer picture. With the img2img class you can transform it directly. img2img (https://github.com/vivesweb/img2img). See the documentation for possibilites. You can see https://github.com/vivesweb/graph-php/blob/main/example.php to take some ideas for its use.
+
+Example with cleared background image:
+
+	$graph->plot( [4, 5, 6, 7], [1, 4, 9, 13], ['marker' => __DIR__ . '/custom_marker.png', 'label'=>'PHP'] );
+	$graph->plot( [4, 5, 6, 7], [3, 6, 12, 8], ['marker' => __DIR__ . '/tux.png', 'label'=>'GNU/Linux'] );
+	$graph->plot( [4, 5, 6, 7], [5, 2, 7, 5], ['marker' => __DIR__ . '/nginx.png', 'label'=>'NGINX'] );
+	$graph->legendwidthlines( 65 );
+	$graph->legendlabelheight( 33 );
+	$graph->imread( __DIR__ .'/background_example.jpg');
+	$graph->title( 'Better use of background' );
+	$graph->set_drawguidelines( );
+	$graph->bckgr_img_gd->filter( IMG_FILTER_GRAYSCALE );
+	$graph->bckgr_img_gd->filter( IMG_FILTER_BRIGHTNESS, -50 );
+	$graph->bckgr_img_gd->filter( IMG_FILTER_BRIGHTNESS, 100 );
+	$graph->bckgr_img_gd->filter( IMG_FILTER_CONTRAST, 50 );
+	$graph->bckgr_img_gd->filter( IMG_FILTER_BRIGHTNESS, 115 );
+	$graph->bckgr_img_gd->flip( );
+	$graph->legend();
+      
+Whith this simple code you will generate Graph with cleared background image:
+
+![Simple graph with Cleared Background image](https://github.com/vivesweb/graph-php/blob/main/samplegraybackground.png?raw=true)
 
 
  
