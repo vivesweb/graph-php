@@ -53,12 +53,98 @@ Nice line graph
  
          require_once( 'graph-php.class.php' );
          
+
+ # NOTES:
+ Before draw the Graph, first we need to prepare values inside (as type bar, lines, etc....)
  
 # RESUME OF METHODS:
 
 - **CREATE GRAPH OBJECT:**
  
-*$graph = new graph();*
+*$graph = new graph( $cfg=null );*
+
+default $cfg:
+
+      [
+        'width'     => 6.4, // 6.4 inches
+        'height'    => 4.8, // 4.8 inches 
+        'dpi'       => 100, // 100 dpis
+        'padding'   => .6, // 0.6 inches
+        'fontdir'   => __DIR__.'/fonts',
+        'fontfamilypath' => 'dejavu-fonts-ttf-2.37/ttf',
+        'font'      => 'DejaVuSans.ttf',    
+        'fontsize'  => 10.5,
+        'axes'      => [ 'prop_cycle' => []
+            ],
+        'lines'     =>
+            ['width' => 3],
+        'values'     => [],
+        'x_values'     => [],
+        'y_values'     => [],
+        'ylabel'    => '',
+        'xlabel'    => '',
+        'title'     => '',
+        'cycler'    => [ 
+            'color' => [ 
+                'default' => ['#1f77b4', '#ff7f0e', '#2ca02c', '#d62728', '#9467bd', '#8c564b', '#e377c2', '#7f7f7f', '#bcbd22', '#17becf']
+                ],
+            'linestyle'  => [ '-', '--', ':', '-.' ]
+            ],
+        'backgroundstyle'       => 'solid',
+        'backgroundcolor'       => '#ffffff',
+        'paddingleft'           => .79,
+        'paddingright'          => .63,
+        'paddingtop'            => .58,
+        'paddingbottom'         => .515,
+        'paddinginsideleft'     => .2,
+        'paddinginsideright'    => .2,
+        'paddinginsidetop'      => .15,
+        'paddinginsidebottom'   => .15,
+        'x_drawguidelines'      => false,
+        'y_drawguidelines'      => false,
+		'centerlabels'			=> false,
+		'bars'	                => ['percmarginbetwbars' => 20 ],
+		'legend'			    => false,
+		'legendmarginleft'		=> 7,
+        'legendmargintop'		=> 6,
+        'legendpaddingleft'		=> 5,
+        'legendpaddingtop'		=> 1,
+        'legendpaddingright'	=> 5,
+        'legendpaddingbottom'	=> 3,
+        'legendwidthlines'	    => 28,
+        'legendlabelheight'     => 21,
+		'width_marker_x'		=> 9,
+		'height_marker_x'		=> 9,
+		'width_marker_o'		=> 10,
+		'height_marker_o'		=> 10,
+        'xticks'                => ['rotation' => 0]
+		
+    ]; // /$default_cfg
+
+Example:
+
+      $graph = new graph();
+ 
+ - **PREPARE BAR GRAPH:**
+ 
+*$graph->bar( $array_values, $arr_values_y_param = null, $cfg = null );*
+
+This method prepare a serie of values in BAR format. Do not echo the graph
+
+$array_values: Values of Axis X
+
+$arr_values_y_param: Values of Axis Y. If not given, each $array_values will be the Axys Y values and each value will be an index position in Axis X automatically
+
+$cfg: *see CFG_GRAPH_TYPES
+
+Example:
+
+      $graph = new graph();
+      $graph->bar( [1, 2, 3, 4] );
+      
+This code, with '$graph->output_gd_png_base64( );' generate:
+
+![Simple graph bar](https://github.com/vivesweb/graph-php/blob/main/samplesimple.png?raw=true)
  
  **Of course. You can use it freely :vulcan_salute::alien:**
  
