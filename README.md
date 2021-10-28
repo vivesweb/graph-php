@@ -524,6 +524,41 @@ Example:
 Whith this simple code you will generate Graph with rotation X labels:
 
 ![Simple graph with rotation 45º X labes](https://github.com/vivesweb/graph-php/blob/main/samplerotationticks.png?raw=true)
+ 
+ - **SCATTER:**
+ 
+You can create a Scatter Graph.
+
+*$graph->scatter( $arr_values );*
+
+$arr_values will be as:
+$arr_vaues = [
+	[ [1, 1.5, 2, 2, 3, 4], [10, 9.5, 9, 10, 8, 9] ], // For Serie 1
+    	[ [4, 5, 5.7, 6, 7, 8], [8, 6, 7.3, 8, 7, 8] ], // For Serie 2
+]
+
+If you want labels on Legend, use this:
+
+$arr_values = [
+    [ [1, 1.5, 2, 2, 3, 4], [10, 9.5, 9, 10, 8, 9], ['label'=>'Male'] ],
+    [ [4, 5, 5.7, 6, 7, 8], [8, 6, 7.3, 8, 7, 8], ['label'=>'Female'] ],
+];
+
+Example:
+
+	$arr_values = [
+    		[ [1, 1.5, 2, 2, 3, 4], [10, 9.5, 9, 10, 8, 9], ['label'=>'Male'] ],
+    		[ [4, 5, 5.7, 6, 7, 8], [8, 6, 7.3, 8, 7, 8], ['label'=>'Female'] ],
+	];
+	
+	$graph->title( 'Scatter & legend' );
+	$graph->scatter( $arr_values );
+	$graph->legend( );
+	echo '<img src="'.$graph->output_gd_png_base64( ).'" >'; // Echo img raw data in html page
+      
+Whith this simple code you will generate Scatter Graph:
+
+![Simple graph with Scatter](https://github.com/vivesweb/graph-php/blob/main/samplescatter.png?raw=true)
 
 
  
