@@ -158,6 +158,29 @@ Whith this simple code you will generate the most simplest graph:
 
 ![Simple graph bar with X & Y values](https://github.com/vivesweb/graph-php/blob/main/samplexyvalues.png?raw=true)
 
+- **PREPARE LINE GRAPH:**
+ 
+*$graph->plot( $array_values, $arr_values_y_param = null, $cfg = null );*
+
+This method prepare a serie of values in LINES format. Do not echo the graph
+
+$array_values: Values of Axis X
+
+$arr_values_y_param: Values of Axis Y. If not given, each $array_values will be the Axys Y values and each value will be an index position in Axis X automatically
+
+$cfg: *see CFG_GRAPH_TYPES
+
+Example:
+
+      $graph = new graph();
+      $graph->plot( [1, 1.5, 2, 1.8, 3] );
+      $graph->title("Simple Plot graph with line");
+      echo '<img src="'.$graph->output_gd_png_base64( ).'" >'; // Echo img raw data in html page
+      
+Whith this simple code you will generate the most simplest line graph:
+
+![Simple plot line graph](https://github.com/vivesweb/graph-php/blob/main/sampleplotline.png?raw=true)
+
 
  
  - **SET GRAPH TITLE:**
@@ -256,9 +279,34 @@ Example:
       $graph->title("Limits Axis X & Y"); // Set the Title
       echo '<img src="'.$graph->output_gd_png_base64( ).'" >'; // Echo img raw data in html page
       
-Whith this simple code you will generate Simple Bar graph with Y label:
+Whith this simple code you will generate Simple Bar graph with limits in X & Y axis:
 
 ![Simple graph bar with Limits Max & Min in Axes X & Y](https://github.com/vivesweb/graph-php/blob/main/samplelimitsxy.png?raw=true)
+ 
+ - **MATH FUNCTIONS:**
+ 
+*$graph->math*
+
+This class is provided with the math library ext-op-ml-php (https://github.com/vivesweb/ext_op_ml)
+
+Here is an example of its use. Check the library documentation to see possibilities
+
+Example:
+
+	$graph = new graph();
+	$x = $graph->math->linspace( 0, 2, 50 );
+	$graph->plot( $x, $x, ['label'=>'linear'] );
+	$graph->plot( $x, $graph->math->pow($x, 2), ['label'=>'quadratic'] );
+	$graph->plot( $x, $graph->math->pow($x, 3), ['label'=>'cubic'] );
+	$graph->xlabel('x label');
+	$graph->ylabel('y label');
+	$graph->title("Simple Plot. With Legend & Labels X, Y");
+	$graph->legend( );
+	echo '<img src="'.$graph->output_gd_png_base64( ).'" >'; // Echo img raw data in html page
+      
+Whith this simple code you will generate Simple Bar graph with Math Functions:
+
+![Simple graph bar with Limits Max & Min in Axes X & Y. Math Functions](https://github.com/vivesweb/graph-php/blob/main/sample4.png?raw=true)
 
 
 
