@@ -482,7 +482,7 @@ Whith this simple code you will generate Graph with background image:
 
 ![Simple graph with Background image](https://github.com/vivesweb/graph-php/blob/main/samplebackground.png?raw=true)
 
-Is not a good idea use original image. You will need to transform it to mor clearer picture. With the img2img class you can transform it directly. img2img (https://github.com/vivesweb/img2img). See the documentation for possibilites. You can see https://github.com/vivesweb/graph-php/blob/main/example.php to take some ideas for its use.
+Is not a good idea use original image. You will need to transform it to more clearer picture. With the img2img class you can transform it directly. img2img (https://github.com/vivesweb/img2img). See the documentation for possibilites. You can see https://github.com/vivesweb/graph-php/blob/main/example.php to take some ideas for its use.
 
 Example with cleared background image:
 
@@ -589,6 +589,74 @@ Whith this simple code you will generate Histogram Graph with 7 bocks:
 
 ![Simple graph with histogram](https://github.com/vivesweb/graph-php/blob/main/samplehistseven.png?raw=true)
 
+
+ 
+ - **GET BASE64 IMAGE DATE:**
+ 
+In this earlier version you can get the data in Base64 format and use it directly into html page
+
+*$graph->output_gd_png_base64( );*
+
+Example:
+
+	echo '<img src="'.$graph->output_gd_png_base64( ).'" >'; // Echo img raw data in html page
+      
+ - **SET WIDTH GRAPH:**
+ 
+You can change the default (6.4 inches) width graph in inches
+
+*$graph->width( $width = 6.4 );*
+
+Example:
+
+	$graph->width( 12.8 );
+      
+ - **SET HEIGHT GRAPH:**
+ 
+You can change the default (4.8 inches) height graph in inches
+
+*$graph->height( $height = 4.8 );*
+
+Example:
+
+	$graph->height( 9.6 );
+	
+	
+ - **CFG_GRAPH_TYPES - USING LINES, COLORS & MARKERS:**
+ 
+You can set some types of graphs:
+
+- When prepare a plot, you can to pass a cfg_param with:
+
+'-': Single line
+
+'--': Double line
+
+'bar': Bar
+
+'scatter': Scatter
+
+One of this colors:
+
+['b' => '#0000ff', 'g' => '#008000', 'r' => '#ff0000', 'c' => '#00cccc', 'm' => '#cc0000', 'y' => '#cc0000', 'k' => '#000000', 'w' => '#ffffff',
+        '#1f77b4' => '#1f77b4', '#ff7f0e' => '#ff7f0e', '#2ca02c' => '#2ca02c', '#d62728' => '#d62728', '#9467bd' => '#9467bd', '#8c564b' => '#8c564b',
+        '#e377c2' => '#e377c2', '#7f7f7f' => '#7f7f7f', '#bcbd22' => '#bcbd22', '#17becf' => '#17becf']
+	
+For markers you can to use:
+
+'filename.png' -> Your file name of png of your marker
+
+'o': round marker
+
+'x': X marker
+
+'^': Triangle marker
+
+'s': Square marker
+
+'d': Diamond marker
+
+      
 
  
  - **MATH FUNCTIONS:**
