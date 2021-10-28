@@ -181,6 +181,38 @@ Whith this simple code you will generate the most simplest line graph:
 
 ![Simple plot line graph](https://github.com/vivesweb/graph-php/blob/main/sampleplotline.png?raw=true)
 
+- **PREPARE MULTILINE GRAPH:**
+ 
+You can prepare multilines calling plot() method as many series as you need.
+
+Example:
+
+      $graph = new graph();
+      $graph->plot( [1, 1.5, 2, 1.8, 3] );
+      $graph->plot( [2, 2.8, 1.7, 2, 2.3] );
+      $graph->title("Multi Line");
+      echo '<img src="'.$graph->output_gd_png_base64( ).'" >'; // Echo img raw data in html page
+      
+Whith this simple code you will generate Multiline Graph:
+
+![Plot Multiline graph](https://github.com/vivesweb/graph-php/blob/main/samplemultiline.png?raw=true)
+
+- **MERGE LINES & BAR GRAPH:**
+ 
+You can merge line/multilines & bars calling plot()/bar() method as many series as you need.
+
+Example:
+
+      $graph = new graph();
+      $graph->bar( [1, 2, 3, 4, 5, 6, 7], [1, 4, 9, 16, 17, 18, 17] );
+      $graph->plot( [1, 2, 3, 4, 5, 6, 7], [10,8, 5, 10,15, 16, 15] );
+      $graph->title( 'Bar & Line' );
+      echo '<img src="'.$graph->output_gd_png_base64( ).'" >'; // Echo img raw data in html page
+      
+Whith this simple code you will generate Line & Bar Graph:
+
+![Plot Line & Bar graph](https://github.com/vivesweb/graph-php/blob/main/samplebarline.png?raw=true)
+
 
  
  - **SET GRAPH TITLE:**
