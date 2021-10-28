@@ -579,6 +579,16 @@ Whith this simple code you will generate Histogram Graph:
 
 ![Simple graph with histogram](https://github.com/vivesweb/graph-php/blob/main/samplehistogram.png?raw=true)
 
+Example of Histogram with 7 blocks:
+
+	$graph->title( '7 xval HISTOGRAM' );
+	$graph->hist( [10, 11, 40, 45, 50, 55, 60, 60, 70, 80, 85, 90, 95, 100, 105, 106, 107, 108, 109, 110, 111, 112, 123, 140, 150], ['num_blocks' => 7] );
+	echo '<img src="'.$graph->output_gd_png_base64( ).'" >'; // Echo img raw data in html page
+      
+Whith this simple code you will generate Histogram Graph with 7 bocks:
+
+![Simple graph with histogram](https://github.com/vivesweb/graph-php/blob/main/samplehistseven.png?raw=true)
+
 
  
  - **MATH FUNCTIONS:**
