@@ -13,8 +13,8 @@
   * */
 
  
-  require_once __DIR__ . '/../img2img/img2img.class.php';
-  require_once __DIR__ . '/../ext-op-ml-php/ext-op-ml-php.class.php';
+  require_once __DIR__ . '/img2img/img2img.class.php';
+  require_once __DIR__ . '/ext-op-ml-php/ext-op-ml-php.class.php';
  
  class graph
     {
