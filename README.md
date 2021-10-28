@@ -142,7 +142,7 @@ Example:
       $graph = new graph();
       $graph->bar( [1, 2, 3, 4] );
       
-This code, with '$graph->output_gd_png_base64( );' generate:
+Whith this simple code, the method '$graph->output_gd_png_base64( );' whill generate the most simplest graph:
 
 ![Simple graph bar](https://github.com/vivesweb/graph-php/blob/main/samplesimple.png?raw=true)
  
