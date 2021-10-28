@@ -665,7 +665,14 @@ For markers you can to use:
 
 'd': Diamond marker
 
+By default, each time that you prepare a values, the system select next color in cycler:
+cycler'    => [ 
+            'color' => [ 
+                'default' => ['#1f77b4', '#ff7f0e', '#2ca02c', '#d62728', '#9467bd', '#8c564b', '#e377c2', '#7f7f7f', '#bcbd22', '#17becf']
+                ],
+            ],
       
+If you want a special color for one serie, you can to pass it in $cfg var when draw plot(), bar(). See the examples
 
  
  - **MATH FUNCTIONS:**
