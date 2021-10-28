@@ -146,6 +146,27 @@ Whith this simple code, the method '$graph->output_gd_png_base64( );' whill gene
 
 ![Simple graph bar](https://github.com/vivesweb/graph-php/blob/main/samplesimple.png?raw=true)
  
+ - **SET GRAPH TITLE:**
+ 
+*$graph->title( $title );*
+
+This method set the graph title
+
+$title: String with the title
+
+Example:
+
+      $graph = new graph();
+      $graph->bar( [1, 2, 3, 4] );
+      $graph->title("Here your graph TITLE");
+      
+Whith this simple code, the method '$graph->output_gd_png_base64( );' whill generate next graph:
+
+![Simple graph bar with title](https://github.com/vivesweb/graph-php/blob/main/sampletitle.png?raw=true)
+
+
+https://github.com/vivesweb/graph-php/blob/main/sampletitle.png?raw=true
+ 
  **Of course. You can use it freely :vulcan_salute::alien:**
  
  By Rafa.
