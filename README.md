@@ -222,6 +222,43 @@ Example:
 Whith this simple code you will generate Simple Bar graph with Y label:
 
 ![Simple graph bar with Y LABEL](https://github.com/vivesweb/graph-php/blob/main/sampleylabel.png?raw=true)
+ 
+ - **LIMIT AXES VALUES:**
+ 
+*$graph->axes( $xmin, $xmax, $ymin, $ymax );*
+
+*$graph->axes( $arr_min_max );*
+
+This method set the min & max values of axis X & Y
+
+You can send each value separatelly with
+
+$xmin: Minimum Value for Axis X
+
+$xmax: Maximum Value for Axis X
+
+$ymin: Minimum Value for Axis Y
+
+$ymax: Maximum Value for Axis Y
+
+If you prefer, you can send the params in one array as:
+
+$arr_params = [$xmin, $xmax, $ymin, $ymax]
+
+If any of params is NULL, then the system will select it automatically
+
+Example:
+
+      $graph = new graph();
+      $graph->bar( [1, 2, 3, 4], [1, 4, 9, 16] );
+      $arr_params = [0, 6, 0, 20];
+      $graph->axes($arr_params); // Same as $graph->axes(0, 6, 0, 20);
+      $graph->title("Limits Axis X & Y"); // Set the Title
+      echo '<img src="'.$graph->output_gd_png_base64( ).'" >'; // Echo img raw data in html page
+      
+Whith this simple code you will generate Simple Bar graph with Y label:
+
+![Simple graph bar with Limits Max & Min in Axes X & Y](https://github.com/vivesweb/graph-php/blob/main/samplelimitsxy.png?raw=true)
 
 
 
