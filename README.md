@@ -329,6 +329,7 @@ Example:
 	$graph->plot( [1, 2, 3, 4, 5, 6, 7], [10,8, 5, 10,15, 16, 15] );
 	$graph->title( 'Legend' );
 	$graph->legend( );
+	echo '<img src="'.$graph->output_gd_png_base64( ).'" >'; // Echo img raw data in html page
       
 Whith this simple code you will generate Graph with legend:
 
@@ -340,6 +341,7 @@ Example with legend names:
 	$graph->plot( [1, 2, 3, 4, 5, 6, 7], [10,8, 5, 10,15, 16, 15], ['label'=>'Name Legend 2'] );
 	$graph->title( 'Legend with label names' );
 	$graph->legend( );
+	echo '<img src="'.$graph->output_gd_png_base64( ).'" >'; // Echo img raw data in html page
       
 Whith this simple code you will generate Graph with legend:
 
@@ -357,6 +359,7 @@ Example:
 	$graph->axes([2, 9, 0, 20]);
 	$graph->title( 'Lines & Legend with "x" & "o" markers' );
 	$graph->legend( );
+	echo '<img src="'.$graph->output_gd_png_base64( ).'" >'; // Echo img raw data in html page
       
 Whith this simple code you will generate Graph with markers:
 
@@ -368,6 +371,7 @@ You can pass directly the marker and format line. Example of use with line with 
 	$graph->plot( [4, 5, 6, 7], [5, 8, 7, 10], 'x-' );
 	$graph->axes([2, 9, 0, 20]);
 	$graph->title( 'Line with marker & only markers' );
+	echo '<img src="'.$graph->output_gd_png_base64( ).'" >'; // Echo img raw data in html page
       
 Whith this simple code you will generate Graph with markers and serie with marker and line:
 
@@ -381,6 +385,7 @@ In 1 simple row you can pass more than 1 array of values with colors & markers. 
 	$x = $graph->math->linspace( 0, 5, 20 );
 	$graph->plot( [ [$x, $x, 'r--'], [$x, $graph->math->pow($x, 2), 'bs'], [$x, $graph->math->pow($x, 3), 'g^'] ] );
 	$graph->title( 'Colors, disctont. line & markers "--", "square", "^"' );
+	echo '<img src="'.$graph->output_gd_png_base64( ).'" >'; // Echo img raw data in html page
       
 Whith this simple code you will generate Graph with mutiple values, colors & markers:
 
@@ -397,6 +402,7 @@ Example:
 	$graph->axes([2, 9, 0, 20]);
 	$graph->title( 'Lines & Legend with "x" & "o" markers' );
 	$graph->legend( );
+	echo '<img src="'.$graph->output_gd_png_base64( ).'" >'; // Echo img raw data in html page
       
 Whith this simple code you will generate Graph with markers:
 
