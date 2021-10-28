@@ -24,6 +24,7 @@ Nice line graph
  
  Requires packages:
   img2img (https://github.com/vivesweb/img2img)
+  
   ext-op-ml-php (https://github.com/vivesweb/ext_op_ml)
  
  - A minimum (minimum, minimum, minimum requeriments is needed). Tested on:
