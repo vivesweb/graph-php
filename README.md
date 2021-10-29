@@ -1,10 +1,10 @@
 # Graph-PHP
-graph bars, histograms, graph lines, scratter, marks
+graph charts, graph bars, histograms, graph lines, scratter, marks
 
 # V 1.0.0
 
 ## CREATE GRAPHS IN PHP:
-You can create graphs with bars, graphs lines with marks, graphs with background images, histograms, ....
+You can create graphs charts with bars, graphs lines with marks, graphs with background images, histograms, ....
 
 # SCREENSHOTS:
 ![Screenshot graph lines created in Pure PHP](https://github.com/vivesweb/graph/blob/main/sample%201.png?raw=true)
