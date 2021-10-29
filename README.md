@@ -1,4 +1,4 @@
-# Graph-PHP
+# Graph-PHP Graph charts in PHP
 graph charts, graph bars, histograms, graph lines, scratter, marks
 
 # V 1.0.0
