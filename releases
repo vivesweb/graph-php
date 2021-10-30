@@ -1,0 +1,11 @@
+2021-10-30 v.1.0.1
+- Change cfg & gd vars from private to protected for external use in new php-plotlib class
+- Change padding automatically when change width or height
+- Add new param to cfg to control font size for xticks & yticks
+- Add new param to cfg to control margin between X & Y ticklabels & ticks
+- Add Boolean draw X & Y label ticks
+- Add cfg bordertype [‘square’, ‘halfsquare’] for plot in pairplot
+- Add cfg ymarginleftlabel
+
+2021-10-28 v.1.0.0
+- First release
