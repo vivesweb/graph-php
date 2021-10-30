@@ -33,7 +33,9 @@
         'fontdir'   => __DIR__.'/fonts',
         'fontfamilypath' => 'dejavu-fonts-ttf-2.37/ttf',
         'font'      => 'DejaVuSans.ttf',    
-        'fontsize'  => 10.5,
+        'fontsize'  => 10.5,   
+        'xtickfontsize'  => 10.5,   
+        'ytickfontsize'  => 10.5,
         'axes'      => [ 'prop_cycle' => []
             ],
         'lines'     =>
@@ -52,6 +54,7 @@
             ],
         'backgroundstyle'       => 'solid',
         'backgroundcolor'       => '#ffffff',
+        'bordertype'            => 'square',
         'paddingleft'           => .79,
         'paddingright'          => .63,
         'paddingtop'            => .58,
@@ -60,6 +63,12 @@
         'paddinginsideright'    => .2,
         'paddinginsidetop'      => .15,
         'paddinginsidebottom'   => .15,
+        'ymarginleftlabel'      => 10,
+        'xmarginlabelsticks'    => 16,
+        'ymarginlabelsticks'    => 10,
+        'xshowlabelticks'       => true,
+        'yshowlabelticks'       => true,
+        'margintitle'           => 50,
         'x_drawguidelines'      => false,
         'y_drawguidelines'      => false,
 		'centerlabels'			=> false,
@@ -124,10 +133,10 @@
      * Config
      *
      * @var    array
-     * @access private
+     * @access protected
      *
      **/
-    private $cfg = [];
+    protected $cfg = [];
 
 
 
@@ -138,7 +147,7 @@
      * @access private
      *
      **/
-    private $gd = null;
+    protected $gd = null;
 
 
 
@@ -200,6 +209,21 @@
      */
     public function width( $width = 6.4 ){
         $this->cfg['width'] = $width;
+
+        // Change paddings automatically
+        // 6.4    -> .79
+        // $width -> X
+        $this->cfg['paddingleft'] = $width * .79 / 6.4;
+        $this->cfg['paddingright'] = $width * .63 / 6.4;
+
+        // Change font size automatically
+        $ponderation = 6.4 - (6.4 - $width)/2;
+        $this->cfg['xtickfontsize'] = $ponderation * 10.5 / 6.4;
+
+        // Change margin labels ticks automatically
+        $this->cfg['xmarginlabelsticks'] = $this->cfg['height'] * 16 / 4.8;
+        $this->cfg['ymarginlabelsticks'] = $this->cfg['width'] * 10 / 6.4;
+        
     } // /width()
 
 
@@ -242,6 +266,26 @@
      */
     public function height( $height = 4.8 ){
         $this->cfg['height'] = $height;
+
+
+
+        // Change paddings automatically
+        // 4.8    -> .58
+        // $height -> X
+        $this->cfg['paddingtop'] = $height * .58 / 4.8;
+        $this->cfg['paddingbottom'] = $height * .515 / 4.8;
+
+        // Change font size automatically
+        // For the size of horizontal text, we need to check width
+        $ponderation = 6.4 - (6.4- $this->cfg['width'])/2;
+        $this->cfg['ytickfontsize'] = $ponderation * 10.5 / 6.4;
+
+        // Change margin labels ticks automatically
+        $this->cfg['ymarginlabelsticks'] = $this->cfg['width'] * 10 / 6.4;
+        $this->cfg['xmarginlabelsticks'] = $this->cfg['height'] * 16 / 4.8;
+
+        // Change title margin automatically
+        $this->cfg['margintitle'] = $this->cfg['height'] * 50 / 4.8;
     } // /height()
 
 
@@ -1920,7 +1964,7 @@
     private function gd_draw_ylabel( ){
         if( $this->cfg['ylabel'] != '' ){
             $angle = 90;
-            $left = 30;
+            $left = $this->cfg['ymarginleftlabel'];
             $font_path = $this->cfg['fontdir']. '/' . $this->cfg['fontfamilypath']. '/' . $this->cfg['font'];
             $text_color = imagecolorallocate( $this->gd, 0, 0, 0); // Black
 
@@ -2010,7 +2054,7 @@
 
             $pixels_available       = $this->pixels_available_x();
             $width_font             = $this->math->str_len_ttf( $this->cfg['title'], $font_path, $titlefontsize, $angle );
-            $top                    = 50;
+            $top                    = $this->cfg['margintitle'];
             $rest_available_size    = $pixels_available - $width_font;
             $left                   = $this->cfg['pix_paddingleft'] + 1 + $this->cfg['pix_paddinginsideleft'] + ($rest_available_size/2);
             imagettftext($this->gd,  $titlefontsize, $angle, $left, $top, $text_color, $font_path, $this->cfg['title'] );
@@ -2037,7 +2081,9 @@
      */
     private function gd_draw_axis_x( $cfg = null ){
         $this->gd_draw_xticks( $cfg );
-        $this->gd_draw_values_x( $cfg );
+        if( $this->cfg['xshowlabelticks']){
+            $this->gd_draw_values_x( $cfg );
+        }
     } // /gd_draw_axis_x()
 
 
@@ -2049,7 +2095,9 @@
      */
     private function gd_draw_axis_y( $cfg = null ){
         $this->gd_draw_yticks( $cfg );
-        $this->gd_draw_values_y( );
+        if( $this->cfg['yshowlabelticks']){
+            $this->gd_draw_values_y( );
+        }
     } // /gd_draw_axis_y()
 
 
@@ -2080,7 +2128,7 @@
 
         $text_color = imagecolorallocate( $this->gd, 0, 0, 0); // Black
 
-        $top    = $this->cfg['pix_height'] - $this->cfg['pix_paddingbottom'] + 4 + 16; // 4 pixels tick + 16 pixels margin
+        $top    = $this->cfg['pix_height'] - $this->cfg['pix_paddingbottom'] + 4 + $this->cfg['xmarginlabelsticks']; // 4 pixels tick + 16 pixels margin
         $left_begin   = $this->cfg['pix_paddingleft'] + 1 + $this->cfg['pix_paddinginsideleft'] + 1;
 		if( isset($this->cfg['global_inside_margin_x_axis']) ){
 			$left_begin += $this->cfg['global_inside_margin_x_axis'];
@@ -2094,9 +2142,9 @@
 
         for( $i = 0; $i < $count_short_values; $i++ ){
             // If we have angle for draw text, then we need to calc the diff between height of font at angle 0 and height of font at $angle to draw text with margin
-            $height_font_angle_0 = $this->math->str_height_ttf( $arr_short_values[ $i ], $font_path, $this->cfg['fontsize']);
-            $width_font         = $this->math->str_len_ttf( $arr_short_values[ $i ], $font_path, $this->cfg['fontsize'], $angle );
-            $height_font        = $this->math->str_height_ttf( $arr_short_values[ $i ], $font_path, $this->cfg['fontsize'], $angle );
+            $height_font_angle_0 = $this->math->str_height_ttf( $arr_short_values[ $i ], $font_path, $this->cfg['xtickfontsize']);
+            $width_font         = $this->math->str_len_ttf( $arr_short_values[ $i ], $font_path, $this->cfg['xtickfontsize'], $angle );
+            $height_font        = $this->math->str_height_ttf( $arr_short_values[ $i ], $font_path, $this->cfg['xtickfontsize'], $angle );
 
             // Calc diff between height angle 0 and $angle
             $diff_pix_angle     = $height_font - $height_font_angle_0;
@@ -2112,7 +2160,7 @@
 				$left += $pixels_size_step/2;
 			}
 
-            imagettftext($this->gd,  $this->cfg['fontsize'], $angle, $left, $top + $diff_pix_angle, $text_color, $font_path, $arr_short_values[ $i ] );
+            imagettftext($this->gd,  $this->cfg['xtickfontsize'], $angle, $left, $top + $diff_pix_angle, $text_color, $font_path, $arr_short_values[ $i ] );
         }
 
         unset( $arr_short_values );
@@ -2157,10 +2205,10 @@
 
         $angle = 0;
 
-        $right    = $this->cfg['pix_paddingleft'] - 10;
+        $right    = $this->cfg['pix_paddingleft'] - $this->cfg['ymarginlabelsticks'];
 
         for( $i = 0; $i < $count_short_values; $i++ ){
-            $font_measures = imagettfbbox( $this->cfg['fontsize'], $angle,  $font_path, $arr_short_values[ $i ] );
+            $font_measures = imagettfbbox( $this->cfg['ytickfontsize'], $angle,  $font_path, $arr_short_values[ $i ] );
             $width_font     = abs($font_measures[4] - $font_measures[0]);
             $height_font    = abs($font_measures[5] - $font_measures[1]);
 
@@ -2168,7 +2216,7 @@
             $top = $top_center + $height_font / 2;
 
             $left = $right - $width_font;
-            imagettftext($this->gd,  $this->cfg['fontsize'], $angle, $left, $top, $text_color, $font_path, $arr_short_values[ $i ] );
+            imagettftext($this->gd,  $this->cfg['ytickfontsize'], $angle, $left, $top, $text_color, $font_path, $arr_short_values[ $i ] );
         }
 
         unset( $arr_short_values );
@@ -2367,34 +2415,39 @@
         $top    = $this->cfg['pix_paddingtop'] + 1;
         $bottom = $this->cfg['pix_height'] - $this->cfg['pix_paddingbottom'] - 1;
 
-        // Outside layer 1
-        imagerectangle( $this->gd, $left-1, $top-1, $right+1, $bottom+1, $outside_layer1);
-        imagerectangle( $this->gd, $left+1, $top+1, $right-1, $bottom-1, $outside_layer1);
+        if( $this->cfg['bordertype'] == 'square'){
+            // Outside layer 1
+            imagerectangle( $this->gd, $left-1, $top-1, $right+1, $bottom+1, $outside_layer1);
+            imagerectangle( $this->gd, $left+1, $top+1, $right-1, $bottom-1, $outside_layer1);
 
-        // 4 round internal borders outside_layer2
-        imagesetpixel($this->gd, $left-1, $top, $outside_layer2);
-        imagesetpixel($this->gd, $right+1, $top, $outside_layer2);
-        imagesetpixel($this->gd, $left, $bottom+1, $outside_layer2);
-        imagesetpixel($this->gd, $right, $bottom+1, $outside_layer2);
-        imagesetpixel($this->gd, $left, $top-1, $outside_layer2);
-        imagesetpixel($this->gd, $right, $top-1, $outside_layer2);
-        imagesetpixel($this->gd, $left-1, $bottom, $outside_layer2);
-        imagesetpixel($this->gd, $right+1, $bottom, $outside_layer2);
+            // 4 round internal borders outside_layer2
+            imagesetpixel($this->gd, $left-1, $top, $outside_layer2);
+            imagesetpixel($this->gd, $right+1, $top, $outside_layer2);
+            imagesetpixel($this->gd, $left, $bottom+1, $outside_layer2);
+            imagesetpixel($this->gd, $right, $bottom+1, $outside_layer2);
+            imagesetpixel($this->gd, $left, $top-1, $outside_layer2);
+            imagesetpixel($this->gd, $right, $top-1, $outside_layer2);
+            imagesetpixel($this->gd, $left-1, $bottom, $outside_layer2);
+            imagesetpixel($this->gd, $right+1, $bottom, $outside_layer2);
 
-        // 4 round external borders outside_layer2
-        imagesetpixel($this->gd, $left+1, $top+1, $outside_layer2);
-        imagesetpixel($this->gd, $right-1, $top+1, $outside_layer2);
-        imagesetpixel($this->gd, $left+1, $bottom-1, $outside_layer2);
-        imagesetpixel($this->gd, $right-1, $bottom-1, $outside_layer2);
+            // 4 round external borders outside_layer2
+            imagesetpixel($this->gd, $left+1, $top+1, $outside_layer2);
+            imagesetpixel($this->gd, $right-1, $top+1, $outside_layer2);
+            imagesetpixel($this->gd, $left+1, $bottom-1, $outside_layer2);
+            imagesetpixel($this->gd, $right-1, $bottom-1, $outside_layer2);
 
-        // 4 external borders
-        imagesetpixel($this->gd, $left-1, $top-1, $outside_layer3);
-        imagesetpixel($this->gd, $right+1, $top-1, $outside_layer3);
-        imagesetpixel($this->gd, $left-1, $bottom+1, $outside_layer3);
-        imagesetpixel($this->gd, $right+1, $bottom+1, $outside_layer3);
+            // 4 external borders
+            imagesetpixel($this->gd, $left-1, $top-1, $outside_layer3);
+            imagesetpixel($this->gd, $right+1, $top-1, $outside_layer3);
+            imagesetpixel($this->gd, $left-1, $bottom+1, $outside_layer3);
+            imagesetpixel($this->gd, $right+1, $bottom+1, $outside_layer3);
 
-        // Black border
-        imagerectangle( $this->gd, $left, $top, $right, $bottom, $border_color);
+            // Black border
+            imagerectangle( $this->gd, $left, $top, $right, $bottom, $border_color);
+        } else if( $this->cfg['bordertype'] == 'halfsquare'){
+            imageline( $this->gd, $left, $bottom, $right, $bottom, $border_color ); // Underline
+            imageline( $this->gd, $left, $bottom, $left, $top, $border_color ); // Left Line
+        }
 
         unset( $border_color );
         unset( $outside_layer1 );
