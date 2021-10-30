@@ -1,7 +1,7 @@
 # Graph-PHP Graph charts in PHP
 graph charts, graph bars, histograms, graph lines, scratter, marks
 
-# V 1.0.0
+# V 1.0.1
 
 ## CREATE GRAPHS IN PHP:
 You can create graphs charts with bars, graphs lines with marks, graphs with background images, histograms, ....
@@ -82,15 +82,17 @@ And now some group of samples:
 
 default $cfg:
 
-      [
-        'width'     => 6.4, // 6.4 inches
+	[
+	'width'     => 6.4, // 6.4 inches
         'height'    => 4.8, // 4.8 inches 
         'dpi'       => 100, // 100 dpis
         'padding'   => .6, // 0.6 inches
         'fontdir'   => __DIR__.'/fonts',
         'fontfamilypath' => 'dejavu-fonts-ttf-2.37/ttf',
         'font'      => 'DejaVuSans.ttf',    
-        'fontsize'  => 10.5,
+        'fontsize'  => 10.5,   
+        'xtickfontsize'  => 10.5,   
+        'ytickfontsize'  => 10.5,
         'axes'      => [ 'prop_cycle' => []
             ],
         'lines'     =>
@@ -109,6 +111,7 @@ default $cfg:
             ],
         'backgroundstyle'       => 'solid',
         'backgroundcolor'       => '#ffffff',
+        'bordertype'            => 'square',
         'paddingleft'           => .79,
         'paddingright'          => .63,
         'paddingtop'            => .58,
@@ -117,6 +120,12 @@ default $cfg:
         'paddinginsideright'    => .2,
         'paddinginsidetop'      => .15,
         'paddinginsidebottom'   => .15,
+        'ymarginleftlabel'      => 10,
+        'xmarginlabelsticks'    => 16,
+        'ymarginlabelsticks'    => 10,
+        'xshowlabelticks'       => true,
+        'yshowlabelticks'       => true,
+        'margintitle'           => 50,
         'x_drawguidelines'      => false,
         'y_drawguidelines'      => false,
 		'centerlabels'			=> false,
@@ -614,13 +623,20 @@ With this simple code you will generate Histogram Graph with 7 bocks:
  
  - **GET BASE64 IMAGE DATE:**
  
-In this earlier version you can get the data in Base64 format and use it directly into html page
+In this earlier version you can get the data in Base64 format and use it directly into html page.
 
-*$graph->output_gd_png_base64( );*
+**From Version 1.0.1:**
+
+- In $cfg you can specify if you want to draw X ticks labels or Y ticks labes with array configuration: [ 'xshowlabelticks' => true, 'xshowlabelticks' => true ].
+- In $cfg you can sepecify border type: [ 'bordertype' => 'square' ] or [ 'bordertype' => 'halfsquare' ]. Default is square. Halfsquare normaly used when draw subplots.
+- In $cfg you can sepecify the ymarginleftlabel: [ 'ymarginleftlabel' => 1 ]
+
+*$graph->output_gd_png_base64( $cfg = null )*
 
 Example:
 
 	echo '<img src="'.$graph->output_gd_png_base64( ).'" >'; // Echo img raw data in html page
+	echo '<img src="'.$graph->output_gd_png_base64( [ 'xshowlabelticks' => true, 'xshowlabelticks' => true ] ).'" >'; // Echo img raw data in html page without ticks labels
       
  - **SET WIDTH GRAPH:**
  
@@ -730,6 +746,6 @@ With this simple code you will generate Simple Line graph with Math Functions:
  
  @since October 2021
  
- @version 1.0.0
+ @version 1.0.1
  
  @license GNU General Public License v3.0
