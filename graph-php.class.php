@@ -2193,7 +2193,7 @@
         $global_min_y = ( isset($this->cfg['global_force_min_y'])?$this->cfg['global_force_min_y']:$this->cfg['global_min_y']);
         $global_max_y = ( isset($this->cfg['global_force_max_y'])?$this->cfg['global_force_max_y']:$this->cfg['global_max_y']);
 		
-        $arr_short_values = $this->long_2_short_arrays( $this->transform_x_values([$global_min_y, $global_max_y ]) );
+        $arr_short_values = $this->long_2_short_arrays( $this->transform_y_values([$global_min_y, $global_max_y ]) );
         rsort( $arr_short_values );
         $count_short_values = count( $arr_short_values );
         $pixels_available = $this->cfg['pix_height'] - $this->cfg['pix_paddingtop'] - 1 - $this->cfg['pix_paddingbottom'] - 1 - $this->cfg['pix_paddinginsidetop'] - $this->cfg['pix_paddinginsidebottom'];
